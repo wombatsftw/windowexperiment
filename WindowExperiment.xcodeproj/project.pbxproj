@@ -12,6 +12,9 @@
 		FA5DAD9F1ACBA8F300747858 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5DAD9E1ACBA8F300747858 /* Images.xcassets */; };
 		FA5DADA21ACBA8F300747858 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5DADA01ACBA8F300747858 /* MainMenu.xib */; };
 		FA5DADAE1ACBA8F300747858 /* WindowExperimentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5DADAD1ACBA8F300747858 /* WindowExperimentTests.m */; };
+		FA5DADB91ACBB44C00747858 /* HackerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5DADB81ACBB44C00747858 /* HackerWindow.m */; };
+		FA5DADBB1ACBBF7400747858 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5DADBA1ACBBF7400747858 /* AVFoundation.framework */; };
+		FA5DADBD1ACBBFD900747858 /* funny-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA5DADBC1ACBBFD900747858 /* funny-sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,10 @@
 		FA5DADA71ACBA8F300747858 /* WindowExperimentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindowExperimentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5DADAC1ACBA8F300747858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5DADAD1ACBA8F300747858 /* WindowExperimentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowExperimentTests.m; sourceTree = "<group>"; };
+		FA5DADB71ACBB44C00747858 /* HackerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackerWindow.h; sourceTree = "<group>"; };
+		FA5DADB81ACBB44C00747858 /* HackerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackerWindow.m; sourceTree = "<group>"; };
+		FA5DADBA1ACBBF7400747858 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA5DADBC1ACBBFD900747858 /* funny-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "funny-sound.mp3"; path = "../../../Downloads/funny-sound.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5DADBB1ACBBF7400747858 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +66,7 @@
 		FA5DAD8B1ACBA8F300747858 = {
 			isa = PBXGroup;
 			children = (
+				FA5DADBA1ACBBF7400747858 /* AVFoundation.framework */,
 				FA5DAD961ACBA8F300747858 /* WindowExperiment */,
 				FA5DADAA1ACBA8F300747858 /* WindowExperimentTests */,
 				FA5DAD951ACBA8F300747858 /* Products */,
@@ -78,6 +87,8 @@
 			children = (
 				FA5DAD991ACBA8F300747858 /* AppDelegate.h */,
 				FA5DAD9A1ACBA8F300747858 /* AppDelegate.m */,
+				FA5DADB71ACBB44C00747858 /* HackerWindow.h */,
+				FA5DADB81ACBB44C00747858 /* HackerWindow.m */,
 				FA5DAD9E1ACBA8F300747858 /* Images.xcassets */,
 				FA5DADA01ACBA8F300747858 /* MainMenu.xib */,
 				FA5DAD971ACBA8F300747858 /* Supporting Files */,
@@ -88,6 +99,7 @@
 		FA5DAD971ACBA8F300747858 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA5DADBC1ACBBFD900747858 /* funny-sound.mp3 */,
 				FA5DAD981ACBA8F300747858 /* Info.plist */,
 				FA5DAD9C1ACBA8F300747858 /* main.m */,
 			);
@@ -190,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5DADBD1ACBBFD900747858 /* funny-sound.mp3 in Resources */,
 				FA5DAD9F1ACBA8F300747858 /* Images.xcassets in Resources */,
 				FA5DADA21ACBA8F300747858 /* MainMenu.xib in Resources */,
 			);
@@ -211,6 +224,7 @@
 			files = (
 				FA5DAD9D1ACBA8F300747858 /* main.m in Sources */,
 				FA5DAD9B1ACBA8F300747858 /* AppDelegate.m in Sources */,
+				FA5DADB91ACBB44C00747858 /* HackerWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +411,7 @@
 				FA5DADB31ACBA8F300747858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA5DADB41ACBA8F300747858 /* Build configuration list for PBXNativeTarget "WindowExperimentTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +420,7 @@
 				FA5DADB61ACBA8F300747858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
