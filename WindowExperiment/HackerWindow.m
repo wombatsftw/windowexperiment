@@ -10,12 +10,16 @@
 
 @implementation HackerWindow
 
-- (instancetype)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
-    self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag];
+- (instancetype)initWithRect:(NSRect)rect {
+    self = [super initWithContentRect:rect styleMask:NSTitledWindowMask backing:NSBackingStoreBuffered defer:NO];
     if (self) {
-        [self setBackgroundColor:[NSColor blackColor]];
+        self.backgroundColor = [NSColor blackColor];
     }
     return self;
+}
+
++ (instancetype)withRect:(NSRect)rect {
+    return [[self alloc] initWithRect:rect];
 }
 
 @end

@@ -10,4 +10,7 @@
 
 @interface HackerWindow : NSWindow
 
+- (instancetype)initWithRect:(NSRect)rect;
++ (instancetype)withRect:(NSRect)rect;
+
 @end

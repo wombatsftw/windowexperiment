@@ -17,33 +17,23 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
-    // TODO: Going to subclass all this crap
+    myWindow = [HackerWindow withRect:NSMakeRect(100, 100, 700, 500)];
     
-    _myWindow = [[HackerWindow alloc] initWithContentRect:NSMakeRect(100, 100, 700, 500) styleMask:NSTitledWindowMask backing:NSBackingStoreBuffered defer:NO];
-    [_myWindow makeKeyAndOrderFront:self];
+    NSWindowController *myWindowController = [[NSWindowController alloc] initWithWindow:myWindow];
     
-    NSView *myView = [[NSView alloc] initWithFrame:NSMakeRect(200, 300, 300, 100)];
-    [myView setWantsLayer:YES];
-    myView.layer.backgroundColor = [[NSColor greenColor] CGColor];
+    [myWindowController showWindow:self];
     
-    NSTextField *myLabel = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 60, 300, 40)];
-    [myLabel setDrawsBackground:NO];
-    [myLabel setStringValue:@"WELCOME TO REAL HACKER"];
-    [myLabel setEditable:NO];
-    [myLabel setTextColor:[NSColor greenColor]];
-    [myLabel setFont:[NSFont fontWithName:@"Courier" size:20]];
+    HackerView *myView = [HackerView withRect:NSMakeRect(200, 300, 300, 100)];
     
-    NSButton *openerButton = [[NSButton alloc] initWithFrame:NSMakeRect(100, 5, 100, 50)];
-    [openerButton setTitle:@"Hack"];
-    [openerButton setButtonType:NSMomentaryLightButton];
-    [openerButton setBezelStyle:NSRoundedBezelStyle];
-    [openerButton setTarget:self];
-    [openerButton setAction:@selector(doSomething)];
+    HackerLabel *myLabel = [HackerLabel withText:@"WELCOME TO REAL HACKER" atPosition:NSMakeRect(0, 60, 300, 40)];
+    
+    HackerButton *openerButton = [HackerButton withLabel:@"Hack" atPosition:NSMakeRect(100, 5, 100, 50) withAction:@selector(doSomething)];
+    
     
     [myView addSubview:myLabel];
     [myView addSubview:openerButton];
     
-    [_myWindow.contentView addSubview:myView];
+    [myWindow.contentView addSubview:myView];
     
     NSString *audioFilePath = [[NSBundle mainBundle]  pathForResource:@"funny-sound" ofType:@"mp3"];
     NSURL *file = [NSURL fileURLWithPath:audioFilePath];
@@ -60,7 +50,7 @@
     NSAlert *hackAlert = [[NSAlert alloc] init];
     [hackAlert setMessageText:@"HACKING THE PENTAGON NOW..."];
     [hackAlert addButtonWithTitle:@"OK"];
-    [hackAlert beginSheetModalForWindow:_myWindow completionHandler:nil];
+    [hackAlert beginSheetModalForWindow:myWindow completionHandler:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
