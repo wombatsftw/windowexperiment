@@ -10,14 +10,12 @@
 
 @implementation HackerButton
 
-- (instancetype)initWithLabel:(NSString *)labelValue atPosition:(NSRect)rect withAction:(SEL)action {
+- (instancetype)initWithLabel:(NSString *)labelValue atPosition:(NSRect)rect {
     self = [super initWithFrame:rect];
     if (self) {
         self.title = labelValue;
         [self setButtonType:NSMomentaryLightButton];
         [self setBezelStyle:NSRoundedBezelStyle];
-        self.target = self;
-        self.action = action;
         /*
          
          [openerButton setTitle:@"Hack"];
@@ -31,8 +29,11 @@
     return self;
 }
 
-+ (instancetype)withLabel:(NSString *)labelValue atPosition:(NSRect)rect withAction:(SEL)action {
-    return [[self alloc] initWithLabel:labelValue atPosition:rect withAction:action];
++ (instancetype)withLabel:(NSString *)labelValue atPosition:(NSRect)rect action:(SEL)action from:(id)sender {
+    id object = [[self alloc] initWithLabel:labelValue atPosition:rect];
+    [object setTarget:sender];
+//    [object setAction:@selector(action)];
+    return object;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {

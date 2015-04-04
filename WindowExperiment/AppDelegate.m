@@ -27,7 +27,8 @@
     
     HackerLabel *myLabel = [HackerLabel withText:@"WELCOME TO REAL HACKER" atPosition:NSMakeRect(0, 60, 300, 40)];
     
-    HackerButton *openerButton = [HackerButton withLabel:@"Hack" atPosition:NSMakeRect(100, 5, 100, 50) withAction:@selector(doSomething)];
+    HackerButton *openerButton = [HackerButton withLabel:@"Hack" atPosition:NSMakeRect(100, 5, 100, 50) action:@selector(doSomething) from:self];
+    [openerButton setAction:@selector(doSomething)];
     
     
     [myView addSubview:myLabel];

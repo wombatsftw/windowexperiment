@@ -10,7 +10,7 @@
 
 @interface HackerLabel : NSTextField
 
-- (instancetype)initWithValue:(NSString *)labelValue atPosition:(NSRect)rect;
+//- (instancetype)initWithValue:(NSString *)labelValue atPosition:(NSRect)rect;
 + (instancetype)withText:(NSString *)labelValue atPosition:(NSRect)rect;
 
 @end
